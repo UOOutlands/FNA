@@ -68,6 +68,11 @@ namespace Microsoft.Xna.Framework.Graphics
 				throw new ArgumentNullException("graphicsDevice");
 			}
 
+			if (width <= 0 || height <= 0)
+			{
+				throw new ArgumentException($"texture request had height or width <= zero. (h: {height}, w: {width}");
+			}
+
 			GraphicsDevice = graphicsDevice;
 			Width = width;
 			Height = height;
